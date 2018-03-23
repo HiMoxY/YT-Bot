@@ -24,9 +24,18 @@ LET'S GO!
 });
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
+  if (msg.content === 't.ping') {
     msg.reply('Pong!');
   }
+      if (msg.content === 't.help') {
+    msg.reply('Hi There! \n It Seems You Need Help With Something! \n If you need help with Commands Do `t.commands`!\if You need help with this bot contact Tea Cup#3343! \n For Suggestions Join Our Discord!! >https://discord.gg/6mvvfSm');
 });
 
-client.login('SUPER_SECRETE_BOTLOGIN!'); //Thats it for todays lession! 3/21/18
+//Now we will be doing a welcome command! Today!
+client.on('guildMemberAdd' , member => {               //You can Change The Name
+  const channel = member.guild.channels.find('name', 'welcome log');
+  if (!channel) return;
+ channel.send(`Welcome to the server, ${member}`);
+});
+
+client.login('SUPER_SECRETE_BOTLOGIN!'); //Thats it for todays lession! 3/23/18
