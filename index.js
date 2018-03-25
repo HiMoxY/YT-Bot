@@ -37,5 +37,15 @@ client.on('guildMemberAdd' , member => {               //You can Change The Name
   if (!channel) return;
  channel.send(`Welcome to the server, ${member}`);
 });
+    
+    //Today i will be showing how to get your bot to send a msg everytime it joins a discord server!
+client.on("guildCreate", guild => {
+  console.log(`The Bot Has Joined ${guild.name} , Owned By ${guild.owner.user.tag}`);
+    
+  var guildMSG = guild.channels.find('name', 'general');
+  
+  guildMSG.send(`
+  Hello There THanks for adding me to your discord!`);
+});
 
-client.login('SUPER_SECRETE_BOTLOGIN!'); //Thats it for todays lession! 3/23/18
+client.login('SUPER_SECRETE_BOTLOGIN!'); //Thats it for todays lession! 3/25/18
